@@ -50,3 +50,11 @@ function checker(input) {
     document.getElementById("computer_score").innerHTML = computer_score;
     document.getElementById("user_score").innerHTML = user_score;
 }
+
+// Add event listeners to buttons
+document.querySelectorAll(".weapons button").forEach(button => {
+    button.addEventListener("click", () => {
+        let user_choice = button.querySelector("i").classList[1].split('-')[2];
+        checker(user_choice);
+    });
+});
